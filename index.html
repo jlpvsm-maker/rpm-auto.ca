@@ -25,7 +25,6 @@
     .hero {
       background: url('images/hero-shop.jpg') center/cover no-repeat;
     }
-    /* Service item animation */
     .service-item {
       opacity: 0;
       transform: translateY(20px) scale(0.95);
@@ -36,10 +35,67 @@
       text-align: center;
       font-weight: bold;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      position: relative;
+      cursor: pointer;
     }
     .service-item.visible {
       opacity: 1;
       transform: translateY(0) scale(1);
+    }
+    .service-item::after {
+      content: "Call for pricing";
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f472b6; /* Tailwind pink-400 */
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+    .service-item:hover::after {
+      opacity: 1;
+    }
+    /* Wave Dividers */
+    .wave-divider {
+      display: block;
+      width: 100%;
+      height: 80px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f5f5f5" fill-opacity="1" d="M0,64L48,69.3C96,75,192,85,288,85.3C384,85,480,75,576,64C672,53,768,43,864,53.3C960,64,1056,96,1152,112C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat center bottom;
+      background-size: cover;
+    }
+    /* Scroll Hint */
+    .scroll-hint {
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+    /* Floating Call Button */
+    .floating-call {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #f472b6; /* pink-400 */
+      color: white;
+      padding: 1rem 1.25rem;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .floating-call:hover {
+      transform: scale(1.1);
+      background-color: #ec4899; /* darker pink */
     }
   </style>
 </head>
@@ -58,27 +114,42 @@
     </nav>
   </header>
 
+  <!-- Floating Call Button -->
+  <a href="tel:+15193551324" class="floating-call">Call Now</a>
+
   <!-- Hero -->
-  <section class="hero h-screen flex items-center justify-center text-center text-white relative">
-    <div class="bg-black/70 p-8 rounded-xl">
+  <section class="hero h-screen flex flex-col items-center justify-center text-center text-white relative">
+    <div class="bg-black/50 p-8 rounded-xl max-w-2xl">
       <h2 class="text-4xl sm:text-6xl font-bold mb-4">Reliable Repairs, Fair Prices</h2>
       <p class="text-lg sm:text-xl mb-6">Your trusted local auto repair shop in Chatham-Kent</p>
       <a href="tel:+15193551324" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold text-white shadow-lg">Call Now</a>
     </div>
+    <div class="absolute bottom-8 scroll-hint">
+      <svg class="w-6 h-6 text-white mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="py-16 px-6 sm:px-12 md:px-32">
-    <h3 class="text-2xl sm:text-3xl mb-4 text-pink-400">About Us</h3>
-    <p class="text-base sm:text-lg text-gray-300">
-      At RPM Automotive, we’re passionate about cars and the people who drive them. Our team is dedicated to providing you with honest service, fair prices, and fast turnaround. Whether it’s routine maintenance or unexpected repairs — we’ve got your back.
+  <section id="about" class="py-16 px-6 sm:px-12 md:px-32 bg-gray-900 relative">
+    <h3 class="text-2xl sm:text-3xl mb-6 text-pink-400 text-center">About Us</h3>
+    <p class="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto text-center mb-6">
+      At RPM Automotive, we’re passionate about cars and the people who drive them. Our team is dedicated to providing honest service, fair prices, and fast turnaround. Whether it’s routine maintenance or unexpected repairs — we’ve got your back.
     </p>
+    <ul class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto text-gray-200">
+      <li>✅ Honest Service</li>
+      <li>✅ Fair Prices</li>
+      <li>✅ Fast Turnaround</li>
+      <li>✅ Experienced Technicians</li>
+    </ul>
+    <div class="wave-divider"></div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="bg-gray-800 py-16 px-6 sm:px-12 md:px-32">
-    <h3 class="text-2xl sm:text-3xl mb-6 text-blue-400">Services We Offer</h3>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-6 text-lg">
+  <section id="services" class="py-16 px-6 sm:px-12 md:px-32 bg-gray-800 relative">
+    <h3 class="text-2xl sm:text-3xl mb-12 text-pink-500 text-center">Our Services</h3>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-lg">
       <li class="service-item">❄️ HVAC Services</li>
       <li class="service-item">🔧 Oil Change</li>
       <li class="service-item">🔄 Tire Rotation</li>
@@ -92,42 +163,34 @@
       <li class="service-item">👠 Suspension & Steering</li>
       <li class="service-item">⚙️ Transmission Service</li>
     </ul>
+    <div class="wave-divider" style="transform: rotate(180deg);"></div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-16 px-6 sm:px-12 md:px-32 bg-gradient-to-b from-purple-900 to-black">
-    <h3 class="text-2xl sm:text-3xl mb-6 text-green-400">Contact Us</h3>
-
-    <!-- Live Google Map -->
-    <div class="mb-6 w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-lg">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.2536370514717!2d-81.63702468450014!3d42.42519827920527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef6c8702d9d81%3A0x9a7c18d6203a3d9c!2s672%20Bloomfield%20Rd%2C%20Chatham-Kent%2C%20ON%20N7M%202J5!5e0!3m2!1sen!2sca!4v1693038721234!5m2!1sen!2sca"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+  <section id="contact" class="py-16 px-6 sm:px-12 md:px-32 bg-gradient-to-b from-purple-900 to-black relative">
+    <h3 class="text-2xl sm:text-3xl mb-8 text-green-400 text-center">Contact Us</h3>
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div class="rounded-xl overflow-hidden shadow-lg h-64 sm:h-80 md:h-full">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.2536370514717!2d-81.63702468450014!3d42.42519827920527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef6c8702d9d81%3A0x9a7c18d6203a3d9c!2s672%20Bloomfield%20Rd%2C%20Chatham-Kent%2C%20ON%20N7M%202J5!5e0!3m2!1sen!2sca!4v1693038721234!5m2!1sen!2sca"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="flex flex-col justify-center text-center md:text-left text-lg text-gray-200">
+        <p class="mb-4">📍 Location:<br>
+          <a href="https://www.google.com/maps/search/?api=1&query=672+Bloomfield+Rd,+Chatham,+Ontario" target="_blank" class="text-blue-400 hover:underline">
+            672 Bloomfield Rd, Chatham, ON
+          </a>
+        </p>
+        <p class="mb-4">📅 Hours: Monday to Friday, 9 AM - 5 PM<br>
+          <span class="text-sm text-gray-400">Late-night & last-minute appointments available upon request</span>
+        </p>
+        <p class="mb-6">📞 Phone: <a href="tel:+15193551324" class="text-blue-400 hover:underline">(519) 355-1324</a></p>
+        <a href="tel:+15193551324" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
+          Call to Book an Appointment
+        </a>
+      </div>
     </div>
-
-    <p class="text-lg mb-2">
-      📍 Location:
-      <a href="https://www.google.com/maps/search/?api=1&query=672+Bloomfield+Rd,+Chatham,+Ontario" target="_blank" class="text-blue-400 hover:underline">
-        672 Bloomfield Rd, Chatham, ON
-      </a>
-    </p>
-    <p class="text-lg mb-2">
-      📅 Hours: Monday to Friday, 9 AM - 5 PM<br />
-      <span class="text-sm text-gray-400">Late-night and last-minute appointments available upon request.</span>
-    </p>
-    <p class="text-lg mb-6">
-      📞 Phone: 
-      <a href="tel:+15193551324" class="text-blue-400 hover:underline">(519) 355-1324</a>
-    </p>
-    <a href="tel:+15193551324" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
-      Call to Book an Appointment
-    </a>
   </section>
 
   <!-- Footer -->
@@ -142,14 +205,10 @@
 
       const revealOnScroll = () => {
         const triggerBottom = window.innerHeight * 0.85;
-
         serviceItems.forEach((item, index) => {
           const itemTop = item.getBoundingClientRect().top;
-
           if (itemTop < triggerBottom) {
-            setTimeout(() => {
-              item.classList.add("visible");
-            }, index * 200);
+            setTimeout(() => item.classList.add("visible"), index * 150);
           }
         });
       };
