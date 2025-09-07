@@ -114,6 +114,29 @@
   <footer class="bg-black py-6 text-center text-gray-400 text-sm">
     © 2025 RPM Automotive. All Rights Reserved.
   </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const serviceItems = document.querySelectorAll(".service-item");
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      serviceItems.forEach((item, index) => {
+        const itemTop = item.getBoundingClientRect().top;
+
+        if (itemTop < triggerBottom) {
+          // Add a staggered delay for a nicer effect
+          setTimeout(() => {
+            item.classList.add("visible");
+          }, index * 200);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // run once on page load
+  });
+</script>
 
 </body>
 </html>
