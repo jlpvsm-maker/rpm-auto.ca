@@ -25,6 +25,22 @@
     .hero {
       background: url('images/hero-shop.jpg') center/cover no-repeat;
     }
+    /* Service item animation */
+    .service-item {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: all 0.6s ease-out;
+      background-color: #1f1f1f;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    .service-item.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   </style>
 </head>
 <body class="leading-relaxed tracking-wide">
@@ -62,15 +78,19 @@
   <!-- Services -->
   <section id="services" class="bg-gray-800 py-16 px-6 sm:px-12 md:px-32">
     <h3 class="text-2xl sm:text-3xl mb-6 text-blue-400">Services We Offer</h3>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg">
-      <li>🔧 Oil Changes</li>
-      <li>🔄 Tire Rotations</li>
-      <li>🔍 Engine Diagnostics</li>
-      <li>🧰 Brake Service</li>
-      <li>🚗 General Tune-Ups</li>
-      <li>❄️ A/C Recharge</li>
-      <li>👠 Suspension & Steering</li>
-      <li>⚙️ Transmission Flush</li>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-6 text-lg">
+      <li class="service-item">❄️ HVAC Services</li>
+      <li class="service-item">🔧 Oil Change</li>
+      <li class="service-item">🔄 Tire Rotation</li>
+      <li class="service-item">🔍 Engine & Emission Diagnostic</li>
+      <li class="service-item">🛠️ Fabricating/Welding</li>
+      <li class="service-item">🚗 Towing Services</li>
+      <li class="service-item">🔑 Lock Outs</li>
+      <li class="service-item">🧰 Brake Service</li>
+      <li class="service-item">🚗 General Tune-Ups</li>
+      <li class="service-item">❄️ A/C Service & Repair</li>
+      <li class="service-item">👠 Suspension & Steering</li>
+      <li class="service-item">⚙️ Transmission Service</li>
     </ul>
   </section>
 
@@ -114,29 +134,30 @@
   <footer class="bg-black py-6 text-center text-gray-400 text-sm">
     © 2025 RPM Automotive. All Rights Reserved.
   </footer>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const serviceItems = document.querySelectorAll(".service-item");
 
-    const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
+  <!-- Scroll Animation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const serviceItems = document.querySelectorAll(".service-item");
 
-      serviceItems.forEach((item, index) => {
-        const itemTop = item.getBoundingClientRect().top;
+      const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.85;
 
-        if (itemTop < triggerBottom) {
-          // Add a staggered delay for a nicer effect
-          setTimeout(() => {
-            item.classList.add("visible");
-          }, index * 200);
-        }
-      });
-    };
+        serviceItems.forEach((item, index) => {
+          const itemTop = item.getBoundingClientRect().top;
 
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll(); // run once on page load
-  });
-</script>
+          if (itemTop < triggerBottom) {
+            setTimeout(() => {
+              item.classList.add("visible");
+            }, index * 200);
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+    });
+  </script>
 
 </body>
 </html>
