@@ -10,29 +10,41 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
-    body { font-family: 'Roboto', sans-serif; background-color: #111; color: #f5f5f5; }
-    h1,h2,h3 { font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
+    body { font-family: 'Roboto', sans-serif; background-color: #111; color: #f5f5f5; font-size: 1rem; line-height: 1.6; }
+    h1,h2,h3 { font-family: 'Montserrat', sans-serif; letter-spacing: 1px; }
+    h1 { font-size: 2.2rem; font-weight: 700; }
+    @media(min-width: 640px){ h1 { font-size: 2.8rem; } }
+    @media(min-width: 1024px){ h1 { font-size: 3rem; } }
+    h2 { font-size: 2rem; font-weight: 600; }
+    @media(min-width: 640px){ h2 { font-size: 2.4rem; } }
+    @media(min-width: 1024px){ h2 { font-size: 2.5rem; } }
+    h3 { font-size: 1.6rem; font-weight: 600; }
+    @media(min-width: 640px){ h3 { font-size: 1.9rem; } }
+    @media(min-width: 1024px){ h3 { font-size: 2rem; } }
     .hero { background: url('images/hero-shop.jpg') center/cover no-repeat; }
     .service-item {
       opacity: 0; transform: translateY(20px) scale(0.95);
       transition: all 0.6s ease-out; background-color: #1f1f1f;
-      padding: 1rem; border-radius: 12px; text-align: center; font-weight: bold;
+      padding: 1rem; border-radius: 12px; text-align: center; font-weight: 600;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2); position: relative; cursor: pointer;
+      font-size: 1rem;
     }
+    @media(min-width: 640px) { .service-item { font-size: 1.1rem; } }
+    @media(min-width: 1024px) { .service-item { font-size: 1.15rem; } }
     .service-item.visible { opacity: 1; transform: translateY(0) scale(1); }
     .service-item::after {
       content: "Call for pricing"; position: absolute; bottom: 110%; left: 50%;
       transform: translateX(-50%); background: #f472b6; color: white;
-      padding: 0.25rem 0.5rem; border-radius: 6px; font-size: 0.8rem;
+      padding: 0.25rem 0.5rem; border-radius: 6px; font-size: 0.85rem;
       white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 10;
     }
     .service-item:hover::after { opacity: 1; }
     .floating-call {
       position: fixed; bottom: 20px; right: 20px; background-color: #f472b6;
-      color: white; padding: 1rem 1.25rem; border-radius: 50px; font-weight: bold;
+      color: white; padding: 1rem 1.25rem; border-radius: 50px; font-weight: 700;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;
       transition: transform 0.2s;
     }
@@ -43,7 +55,6 @@
 </head>
 <body class="leading-relaxed tracking-wide">
 
-<!-- Header -->
 <header class="bg-black/80 fixed top-0 left-0 w-full z-50 shadow-lg">
   <nav class="flex items-center justify-between px-6 sm:px-12 py-4">
     <h1 class="text-2xl sm:text-3xl font-bold text-pink-500">RPM Automotive</h1>
@@ -56,10 +67,8 @@
   </nav>
 </header>
 
-<!-- Floating Call Button -->
 <a href="tel:+15193551324" class="floating-call">Call Now</a>
 
-<!-- Hero -->
 <section class="hero h-screen flex flex-col items-center justify-center text-center text-white relative">
   <div class="bg-black/50 p-8 rounded-xl max-w-2xl">
     <h2 class="text-4xl sm:text-6xl font-bold mb-4">Reliable Repairs, Fair Prices</h2>
@@ -73,7 +82,6 @@
   </div>
 </section>
 
-<!-- About -->
 <section id="about" class="py-16 px-6 sm:px-12 md:px-32 bg-gray-900 relative overflow-hidden">
   <h3 class="text-2xl sm:text-3xl mb-6 text-pink-400 text-center">About Us</h3>
   <p class="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto text-center mb-6">
@@ -87,7 +95,6 @@
   </ul>
 </section>
 
-<!-- Services -->
 <section id="services" class="py-16 px-6 sm:px-12 md:px-32 bg-gray-800 relative overflow-hidden">
   <h3 class="text-2xl sm:text-3xl mb-12 text-pink-500 text-center">Our Services</h3>
   <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-lg">
@@ -106,7 +113,6 @@
   </ul>
 </section>
 
-<!-- Contact -->
 <section id="contact" class="py-16 px-6 sm:px-12 md:px-32 bg-gradient-to-b from-purple-900 to-black relative">
   <h3 class="text-2xl sm:text-3xl mb-8 text-green-400 text-center">Contact Us</h3>
   <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -133,7 +139,6 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="bg-black py-6 text-center text-gray-400 text-sm">
   © 2025 RPM Automotive. All Rights Reserved.
 </footer>
@@ -159,18 +164,25 @@
       <div class="mb-4">
         <textarea name="message" placeholder="Service & Date" required class="w-full p-2 rounded bg-gray-800 text-white"></textarea>
       </div>
+
+      <div class="mb-4 text-yellow-400 text-sm text-center">
+        ⚠️ Note: Your appointment is <strong>not confirmed</strong> until you receive a confirmation email and/or SMS.
+      </div>
+
       <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-lg font-bold">Submit Booking</button>
     </form>
 
     <div id="thankYouMessage" class="hidden text-center text-green-400 mt-4">
-      <p class="text-lg font-bold">Thank you! Your booking request has been received.</p>
+      <p class="text-lg font-bold">
+        Thank you! Your booking request has been received.<br>
+        ⚠️ Reminder: Your appointment is <strong>not confirmed</strong> until you receive a confirmation email and/or SMS.
+      </p>
       <button onclick="closeThankYou()" class="mt-4 px-4 py-2 bg-pink-600 text-white rounded">Close</button>
     </div>
   </div>
 </div>
 
 <script>
-  // Services animation
   document.addEventListener("DOMContentLoaded", () => {
     const serviceItems = document.querySelectorAll(".service-item");
     const revealOnScroll = () => {
@@ -184,11 +196,9 @@
     revealOnScroll();
   });
 
-  // Modal functions
   function openBookingForm(){document.getElementById('bookingModal').classList.remove('hidden');}
   function closeBookingForm(){document.getElementById('bookingModal').classList.add('hidden');}
 
-  // Netlify AJAX form submission
   const form = document.getElementById('bookingForm');
   form.addEventListener('submit', function(event){
     event.preventDefault();
