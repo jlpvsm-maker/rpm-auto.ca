@@ -102,9 +102,7 @@
         <li><a href="#services" class="hover:text-pink-400">Services</a></li>
         <li><a href="#contact" class="hover:text-pink-400">Contact</a></li>
       </ul>
-      <button onclick="openBookingForm()" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg shadow">
-        Book Now
-      </button>
+      <button onclick="openBookingForm()" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg shadow">Book Now</button>
     </nav>
   </header>
 
@@ -116,9 +114,7 @@
     <div class="bg-black/50 p-8 rounded-xl max-w-2xl">
       <h2 class="text-4xl sm:text-6xl font-bold mb-4">Reliable Repairs, Fair Prices</h2>
       <p class="text-lg sm:text-xl mb-6">Your trusted local auto repair shop in Chatham-Kent</p>
-      <button onclick="openBookingForm()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold text-white shadow-lg">
-        Book Now
-      </button>
+      <button onclick="openBookingForm()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold text-white shadow-lg">Book Now</button>
     </div>
     <div class="absolute bottom-8 scroll-hint">
       <svg class="w-6 h-6 text-white mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -196,11 +192,15 @@
   <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
     <div class="bg-white text-black p-6 rounded-lg shadow-xl w-full max-w-lg">
       <h2 class="text-2xl font-bold mb-4">Book an Appointment</h2>
-      <form onsubmit="submitBooking(event)" class="space-y-4">
-        <input type="text" id="name" placeholder="Your Name" class="w-full border rounded p-2" required>
-        <input type="text" id="contact" placeholder="Phone or Email" class="w-full border rounded p-2" required>
-        <input type="text" id="vin" placeholder="Vehicle VIN (optional)" class="w-full border rounded p-2">
-        <select id="service" class="w-full border rounded p-2" required>
+      <form name="booking" method="POST" data-netlify="true" onsubmit="submitBooking(event)" class="space-y-4">
+        <input type="hidden" name="form-name" value="booking">
+        <p class="text-sm text-red-500 font-bold">
+          ⚠️ Please note: Nothing is booked or confirmed until you receive a confirmation email or phone call. You may also call us directly to confirm your appointment.
+        </p>
+        <input type="text" name="name" placeholder="Your Name" class="w-full border rounded p-2" required>
+        <input type="text" name="contact" placeholder="Phone or Email" class="w-full border rounded p-2" required>
+        <input type="text" name="vin" placeholder="Vehicle VIN (optional)" class="w-full border rounded p-2">
+        <select name="service" class="w-full border rounded p-2" required>
           <option value="">Select a Service</option>
           <option>HVAC Services</option>
           <option>Oil Change</option>
@@ -215,8 +215,10 @@
           <option>Suspension & Steering</option>
           <option>Transmission Service</option>
         </select>
-        <input type="datetime-local" id="datetime" class="w-full border rounded p-2" required>
-        <p class="text-sm text-gray-600">⚠️ Appointments must be booked at least 12 hours in advance. A confirmation by phone, text, or email is required. Unconfirmed appointments are not booked.</p>
+        <input type="datetime-local" name="datetime" class="w-full border rounded p-2" required>
+        <p class="text-sm text-gray-600">
+          ⚠️ Appointments must be booked at least 12 hours in advance. A confirmation by phone, text, or email is required. Unconfirmed appointments are not booked.
+        </p>
         <div class="flex justify-end gap-4">
           <button type="button" onclick="closeBookingForm()" class="px-4 py-2 bg-gray-500 text-white rounded">Cancel</button>
           <button type="submit" class="px-4 py-2 bg-pink-600 text-white rounded">Submit</button>
@@ -234,7 +236,7 @@
     </div>
   </div>
 
-  <!-- Scroll Animation + Modal Scripts -->
+  <!-- Scripts -->
   <script>
     // Services animation
     document.addEventListener("DOMContentLoaded", () => {
@@ -252,7 +254,7 @@
       revealOnScroll();
     });
 
-    // Booking form functions
+    // Booking modal functions
     function openBookingForm() {
       document.getElementById("bookingModal").classList.remove("hidden");
     }
@@ -261,6 +263,7 @@
     }
     function submitBooking(event) {
       event.preventDefault();
+      // Netlify Forms will automatically handle submission
       closeBookingForm();
       document.getElementById("confirmationModal").classList.remove("hidden");
     }
@@ -268,5 +271,6 @@
       document.getElementById("confirmationModal").classList.add("hidden");
     }
   </script>
+
 </body>
 </html>
