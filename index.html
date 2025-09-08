@@ -162,6 +162,171 @@
     <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
       <div class="rounded-xl overflow-hidden shadow-lg h-64 sm:h-80 md:h-full">
         <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.2536370514717!2d-81.63702468450014!3d42.42519827920527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef6c8702d9d81%3A0x9a7c18d6203a3d9c!2s672%20Bloomfield%20Rd%2C%20Chatham-Kent%
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPM Automotive</title>
+  <meta name="description" content="Honest, affordable auto repair in Chatham, Ontario. From oil changes to engine diagnostics — RPM Automotive has you covered." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #111;
+      color: #f5f5f5;
+    }
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+    }
+    .hero {
+      background: url('images/hero-shop.jpg') center/cover no-repeat;
+    }
+    .service-item {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: all 0.6s ease-out;
+      background-color: #1f1f1f;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      position: relative;
+      cursor: pointer;
+    }
+    .service-item.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .service-item::after {
+      content: "Call for pricing";
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f472b6;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+    .service-item:hover::after {
+      opacity: 1;
+    }
+    /* Floating Call Button */
+    .floating-call {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #f472b6;
+      color: white;
+      padding: 1rem 1.25rem;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .floating-call:hover {
+      transform: scale(1.1);
+      background-color: #ec4899;
+    }
+    /* Scroll Hint */
+    .scroll-hint {
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+  </style>
+</head>
+<body class="leading-relaxed tracking-wide">
+
+  <!-- Header -->
+  <header class="bg-black/80 fixed top-0 left-0 w-full z-50 shadow-lg">
+    <nav class="flex items-center justify-between px-6 sm:px-12 py-4">
+      <h1 class="text-2xl sm:text-3xl font-bold text-pink-500">RPM Automotive</h1>
+      <ul class="hidden md:flex space-x-8 text-gray-200 text-lg">
+        <li><a href="#about" class="hover:text-pink-400">About</a></li>
+        <li><a href="#services" class="hover:text-pink-400">Services</a></li>
+        <li><a href="#contact" class="hover:text-pink-400">Contact</a></li>
+      </ul>
+      <button onclick="openBookingForm()" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg shadow">Book Now</button>
+    </nav>
+  </header>
+
+  <!-- Floating Call Button -->
+  <a href="tel:+15193551324" class="floating-call">Call Now</a>
+
+  <!-- Hero -->
+  <section class="hero h-screen flex flex-col items-center justify-center text-center text-white relative">
+    <div class="bg-black/50 p-8 rounded-xl max-w-2xl">
+      <h2 class="text-4xl sm:text-6xl font-bold mb-4">Reliable Repairs, Fair Prices</h2>
+      <p class="text-lg sm:text-xl mb-6">Your trusted local auto repair shop in Chatham-Kent</p>
+      <button onclick="openBookingForm()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold text-white shadow-lg">Book Now</button>
+    </div>
+    <div class="absolute bottom-8 scroll-hint">
+      <svg class="w-6 h-6 text-white mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 px-6 sm:px-12 md:px-32 bg-gray-900 relative overflow-hidden">
+    <h3 class="text-2xl sm:text-3xl mb-6 text-pink-400 text-center">About Us</h3>
+    <p class="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto text-center mb-6">
+      At RPM Automotive, we’re passionate about cars and the people who drive them. Our team is dedicated to providing honest service, fair prices, and fast turnaround. Whether it’s routine maintenance or unexpected repairs — we’ve got your back.
+    </p>
+    <ul class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto text-gray-200">
+      <li>✅ Honest Service</li>
+      <li>✅ Fair Prices</li>
+      <li>✅ Fast Turnaround</li>
+      <li>✅ Experienced Technicians</li>
+    </ul>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 px-6 sm:px-12 md:px-32 bg-gray-800 relative overflow-hidden">
+    <h3 class="text-2xl sm:text-3xl mb-12 text-pink-500 text-center">Our Services</h3>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-lg">
+      <li class="service-item">❄️ HVAC Services</li>
+      <li class="service-item">🔧 Oil Change</li>
+      <li class="service-item">🔄 Tire Rotation</li>
+      <li class="service-item">🔍 Engine & Emission Diagnostic</li>
+      <li class="service-item">🛠️ Fabricating/Welding</li>
+      <li class="service-item">🚗 Towing Services</li>
+      <li class="service-item">🔑 Lock Outs</li>
+      <li class="service-item">🧰 Brake Service</li>
+      <li class="service-item">🚗 General Tune-Ups</li>
+      <li class="service-item">❄️ A/C Service & Repair</li>
+      <li class="service-item">👠 Suspension & Steering</li>
+      <li class="service-item">⚙️ Transmission Service</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 px-6 sm:px-12 md:px-32 bg-gradient-to-b from-purple-900 to-black relative">
+    <h3 class="text-2xl sm:text-3xl mb-8 text-green-400 text-center">Contact Us</h3>
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div class="rounded-xl overflow-hidden shadow-lg h-64 sm:h-80 md:h-full">
+        <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.2536370514717!2d-81.63702468450014!3d42.42519827920527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef6c8702d9d81%3A0x9a7c18d6203a3d9c!2s672%20Bloomfield%20Rd%2C%20Chatham-Kent%2C%20ON%20N7M%202J5!5e0!3m2!1sen!2sca!4v1693038721234!5m2!1sen!2sca"
           width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
