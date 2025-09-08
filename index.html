@@ -52,7 +52,7 @@
       <li><a href="#services" class="hover:text-pink-400">Services</a></li>
       <li><a href="#contact" class="hover:text-pink-400">Contact</a></li>
     </ul>
-    <button onclick="document.getElementById('bookingModal').classList.remove('hidden')" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg shadow">Book Now</button>
+    <button onclick="openBookingForm()" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg shadow">Book Now</button>
   </nav>
 </header>
 
@@ -64,7 +64,7 @@
   <div class="bg-black/50 p-8 rounded-xl max-w-2xl">
     <h2 class="text-4xl sm:text-6xl font-bold mb-4">Reliable Repairs, Fair Prices</h2>
     <p class="text-lg sm:text-xl mb-6">Your trusted local auto repair shop in Chatham-Kent</p>
-    <button onclick="document.getElementById('bookingModal').classList.remove('hidden')" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold text-white shadow-lg">Book Now</button>
+    <button onclick="openBookingForm()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold text-white shadow-lg">Book Now</button>
   </div>
   <div class="absolute bottom-8 scroll-hint">
     <svg class="w-6 h-6 text-white mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -126,7 +126,7 @@
         <span class="text-sm text-gray-400">Late-night & last-minute appointments available upon request</span>
       </p>
       <p class="mb-6">📞 Phone: <a href="tel:+15193551324" class="text-blue-400 hover:underline">(519) 355-1324</a></p>
-      <button onclick="document.getElementById('bookingModal').classList.remove('hidden')" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
+      <button onclick="openBookingForm()" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
         Book an Appointment
       </button>
     </div>
@@ -138,16 +138,15 @@
   © 2025 RPM Automotive. All Rights Reserved.
 </footer>
 
-<!-- Booking Form Modal (Netlify Form) -->
+<!-- Booking Form Modal -->
 <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
   <div class="bg-gray-900 p-8 rounded-xl w-full max-w-md relative">
-    <button onclick="document.getElementById('bookingModal').classList.add('hidden')" class="absolute top-3 right-3 text-white font-bold text-xl">&times;</button>
+    <button onclick="closeBookingForm()" class="absolute top-3 right-3 text-white font-bold text-xl">&times;</button>
     <h3 class="text-2xl font-bold text-pink-500 mb-4 text-center">Book Your Service</h3>
 
-    <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <form name="booking" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="bookingForm">
       <input type="hidden" name="form-name" value="booking" />
       <input type="hidden" name="bot-field" />
-
       <div class="mb-4">
         <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 rounded bg-gray-800 text-white" />
       </div>
@@ -160,17 +159,16 @@
       <div class="mb-4">
         <textarea name="message" placeholder="Service & Date" required class="w-full p-2 rounded bg-gray-800 text-white"></textarea>
       </div>
-      <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-lg font-bold">
-        Submit Booking
-      </button>
+      <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-lg font-bold">Submit Booking</button>
     </form>
 
-    <!-- Thank you message after submission -->
-    <p class="mt-4 text-center text-green-400 hidden" id="thankYou">Thanks! We received your booking request.</p>
+    <div id="thankYouMessage" class="hidden text-center text-green-400 mt-4">
+      <p class="text-lg font-bold">Thank you! Your booking request has been received.</p>
+      <button onclick="closeThankYou()" class="mt-4 px-4 py-2 bg-pink-600 text-white rounded">Close</button>
+    </div>
   </div>
 </div>
 
-<!-- Scripts -->
 <script>
   // Services animation
   document.addEventListener("DOMContentLoaded", () => {
@@ -185,6 +183,34 @@
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
   });
+
+  // Modal functions
+  function openBookingForm(){document.getElementById('bookingModal').classList.remove('hidden');}
+  function closeBookingForm(){document.getElementById('bookingModal').classList.add('hidden');}
+
+  // Netlify AJAX form submission
+  const form = document.getElementById('bookingForm');
+  form.addEventListener('submit', function(event){
+    event.preventDefault();
+    const formData = new FormData(form);
+    fetch('/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(()=>{
+      form.style.display = 'none';
+      document.getElementById('thankYouMessage').classList.remove('hidden');
+    })
+    .catch((error)=>alert('Oops! Something went wrong: '+error));
+  });
+
+  function closeThankYou(){
+    document.getElementById('thankYouMessage').classList.add('hidden');
+    form.reset();
+    form.style.display = 'block';
+    closeBookingForm();
+  }
 </script>
 
 </body>
