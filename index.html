@@ -3,229 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RPM Automotive – Fast, honest, and reliable automotive services in Chatham, Ontario. Oil changes, tire rotations, diagnostics, and more.">
+  <meta name="author" content="RPM Automotive">
   <title>RPM Automotive</title>
-  <meta name="description" content="Honest, affordable auto repair in Chatham, Ontario. From oil changes to engine diagnostics — RPM Automotive has you covered." />
-
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Roboto', sans-serif; background-color: #111; color: #f5f5f5; font-size: 1rem; line-height: 1.6; }
-    h1,h2,h3 { font-family: 'Montserrat', sans-serif; letter-spacing: 1px; }
-    h1 { font-size: 2.2rem; font-weight: 700; }
-    @media(min-width: 640px){ h1 { font-size: 2.8rem; } }
-    @media(min-width: 1024px){ h1 { font-size: 3rem; } }
-    h2 { font-size: 2rem; font-weight: 600; }
-    @media(min-width: 640px){ h2 { font-size: 2.4rem; } }
-    @media(min-width: 1024px){ h2 { font-size: 2.5rem; } }
-    h3 { font-size: 1.6rem; font-weight: 600; }
-    @media(min-width: 640px){ h3 { font-size: 1.9rem; } }
-    @media(min-width: 1024px){ h3 { font-size: 2rem; } }
-    .hero { background: url('images/hero-shop.jpg') center/cover no-repeat; }
-    .service-item { opacity: 0; transform: translateY(20px) scale(0.95); transition: all 0.6s ease-out; background-color: #1f1f1f; padding: 1rem; border-radius: 12px; text-align: center; font-weight: 600; box-shadow: 0 4px 6px rgba(0,0,0,0.2); position: relative; cursor: pointer; font-size: 1rem; }
-    @media(min-width: 640px) { .service-item { font-size: 1.1rem; } }
-    @media(min-width: 1024px) { .service-item { font-size: 1.15rem; } }
-    .service-item.visible { opacity: 1; transform: translateY(0) scale(1); }
-    .service-item::after { content: "Call for pricing"; position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); background: #f472b6; color: white; padding: 0.25rem 0.5rem; border-radius: 6px; font-size: 0.85rem; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 10; }
-    .service-item:hover::after { opacity: 1; }
-    .floating-call { position: fixed; bottom: 20px; right: 20px; background-color: #f472b6; color: white; padding: 1rem 1.25rem; border-radius: 50px; font-weight: 700; box-shadow: 0 4px 6px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; transition: transform 0.2s; }
-    .floating-call:hover { transform: scale(1.1); background-color: #ec4899; }
-    .scroll-hint { animation: bounce 2s infinite; }
-    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
-
-    /* Mascot Animations */
-    @keyframes flicker { 0%,19%,21%,23%,25%,54%,56%,100% { text-shadow: 0 0 6px #ff007f,0 0 12px #ff4da6;color:#ff007f; } 20%,24%,55% { text-shadow:none;color:#ff4da6; } }
-    .animate-flicker { animation: flicker 2s infinite alternate; }
-    @keyframes bounceMascot { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
-    .animate-bounce-mascot { animation: bounceMascot 1s infinite ease-in-out; }
-    @keyframes wiggle { 0%,100%{transform:translateX(0);}25%{transform:translateX(-3px);}50%{transform:translateX(3px);}75%{transform:translateX(-2px);} }
-    .animate-wiggle { animation: wiggle 1.5s infinite ease-in-out; }
+    body {
+      font-family: 'Russo One', sans-serif;
+    }
   </style>
 </head>
-<body class="leading-relaxed tracking-wide">
+<body class="bg-gray-900 text-white">
 
-<header class="bg-black/80 fixed top-0 left-0 w-full z-50 shadow-lg">
-  <nav class="flex items-center justify-between px-6 sm:px-12 py-4">
-    <h1 class="text-2xl sm:text-3xl font-bold text-pink-500">RPM Automotive</h1>
-    <ul class="hidden md:flex space-x-8 text-gray-200 text-lg">
-      <li><a href="#about" class="hover:text-pink-400">About</a></li>
-      <li><a href="#services" class="hover:text-pink-400">Services</a></li>
-      <li><a href="#contact" class="hover:text-pink-400">Contact</a></li>
+  <!-- Header -->
+  <header class="bg-black text-white p-6 text-center shadow-md">
+    <h1 class="text-4xl sm:text-5xl font-bold tracking-wide">RPM Automotive</h1>
+    <p class="mt-2 text-xl sm:text-2xl text-gray-400">Fast. Honest. Reliable.</p>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-blue-900 via-gray-900 to-purple-900 py-20 text-center">
+    <h2 class="text-3xl sm:text-4xl mb-4">Your Local Garage You Can Trust</h2>
+    <p class="text-lg sm:text-xl max-w-xl mx-auto leading-relaxed">
+      We provide expert automotive services including oil changes, tire rotation, diagnostics and more — all with transparent pricing and top-quality service.
+    </p>
+    <button onclick="openBookingForm()" class="mt-6 bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
+      Book an Appointment
+    </button>
+  </section>
+
+  <!-- About -->
+  <section class="py-16 px-6 sm:px-12 md:px-32">
+    <h3 class="text-2xl sm:text-3xl mb-4 text-pink-400">About Us</h3>
+    <p class="text-base sm:text-lg text-gray-300">
+      At RPM Automotive, we’re passionate about cars and the people who drive them. Our team is dedicated to providing you with honest service, fair prices, and fast turnaround. Whether it’s routine maintenance or unexpected repairs — we’ve got your back.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-gray-800 py-16 px-6 sm:px-12 md:px-32">
+    <h3 class="text-2xl sm:text-3xl mb-6 text-blue-400">Services We Offer</h3>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg">
+      <li>🔧 Oil Changes <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>🔄 Tire Rotations <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>🔍 Engine Diagnostics <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>🧰 Brake Service <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>🚗 General Tune-Ups <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>❄️ A/C Recharge <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>👠 Suspension & Steering <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>⚙️ Transmission Flush <div class="text-sm text-pink-400">Call for pricing</div></li>
     </ul>
-    <div class="relative inline-block">
-      <button id="bookNowBtn" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg shadow font-bold">Book Now</button>
-      <div id="rpmMascot" class="absolute opacity-70 z-10 transition-all duration-500 -top-16 -right-8 hidden">
-        <div class="flex flex-col items-center text-white animate-bounce-mascot animate-wiggle">
-          <div class="text-3xl mb-1">😎</div>
-          <div class="bg-black text-pink-500 font-bold border-2 border-white px-2 py-1 rounded-lg shadow-[0_0_8px_#ff007f,0_0_12px_#ff4da6] animate-flicker text-sm">RPM</div>
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>
+  </section>
 
-<a href="tel:+15193551324" class="floating-call">Call Now</a>
+  <!-- Contact -->
+  <section class="py-16 px-6 sm:px-12 md:px-32 bg-gradient-to-b from-purple-900 to-black">
+    <h3 class="text-2xl sm:text-3xl mb-6 text-green-400">Contact Us</h3>
 
-<section class="hero h-screen flex flex-col items-center justify-center text-center text-white relative">
-  <div class="bg-black/50 p-8 rounded-xl max-w-2xl">
-    <h2 class="text-4xl sm:text-6xl font-bold mb-4">Reliable Repairs, Fair Prices</h2>
-    <p class="text-lg sm:text-xl mb-6">Your trusted local auto repair shop in Chatham-Kent</p>
-    <button id="bookNowBtnHero" onclick="document.getElementById('bookNowBtn').click()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold text-white shadow-lg">Book Now</button>
-  </div>
-  <div class="absolute bottom-8 scroll-hint">
-    <svg class="w-6 h-6 text-white mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </div>
-</section>
-
-<section id="about" class="py-16 px-6 sm:px-12 md:px-32 bg-gray-900 relative overflow-hidden">
-  <h3 class="text-2xl sm:text-3xl mb-6 text-pink-400 text-center">About Us</h3>
-  <p class="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto text-center mb-6">
-    At RPM Automotive, we’re passionate about cars and the people who drive them. Our team is dedicated to providing honest service, fair prices, and fast turnaround.
-  </p>
-  <ul class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto text-gray-200">
-    <li>✅ Honest Service</li>
-    <li>✅ Fair Prices</li>
-    <li>✅ Fast Turnaround</li>
-    <li>✅ Experienced Technicians</li>
-  </ul>
-</section>
-
-<section id="services" class="py-16 px-6 sm:px-12 md:px-32 bg-gray-800 relative overflow-hidden">
-  <h3 class="text-2xl sm:text-3xl mb-12 text-pink-500 text-center">Our Services</h3>
-  <ul class="gridgrid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-lg">
-    <li class="service-item">❄️ HVAC Services</li>
-    <li class="service-item">🔧 Oil Change</li>
-    <li class="service-item">🔄 Tire Rotation</li>
-    <li class="service-item">🔍 Engine & Emission Diagnostic</li>
-    <li class="service-item">🛠️ Fabricating/Welding</li>
-    <li class="service-item">🚗 Towing Services</li>
-    <li class="service-item">🔑 Lock Outs</li>
-    <li class="service-item">🧰 Brake Service</li>
-    <li class="service-item">🚗 General Tune-Ups</li>
-    <li class="service-item">❄️ A/C Service & Repair</li>
-    <li class="service-item">👠 Suspension & Steering</li>
-    <li class="service-item">⚙️ Transmission Service</li>
-  </ul>
-</section>
-
-<section id="contact" class="py-16 px-6 sm:px-12 md:px-32 bg-gradient-to-b from-purple-900 to-black relative">
-  <h3 class="text-2xl sm:text-3xl mb-8 text-green-400 text-center">Contact Us</h3>
-  <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-    <div class="rounded-xl overflow-hidden shadow-lg h-64 sm:h-80 md:h-full">
+    <!-- Live Google Map -->
+    <div class="mb-6 w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-lg">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.2536370514717!2d-81.63702468450014!3d42.42519827920527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef6c8702d9d81%3A0x9a7c18d6203a3d9c!2s672%20Bloomfield%20Rd%2C%20Chatham-Kent%2C%20ON%20N7M%202J5!5e0!3m2!1sen!2sca!4v1693038721234!5m2!1sen!2sca"
-        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
-    <div class="flex flex-col justify-center text-center md:text-left text-lg text-gray-200">
-      <p class="mb-4">📍 Location:<br>
-        <a href="https://www.google.com/maps/search/?api=1&query=672+Bloomfield+Rd,+Chatham,+Ontario" target="_blank" class="text-blue-400 hover:underline">
-          672 Bloomfield Rd, Chatham, ON
-        </a>
-      </p>
-      <p class="mb-4">📅 Hours: Monday to Friday, 9 AM - 5 PM<br>
-        <span class="text-sm text-gray-400">Late-night & last-minute appointments available upon request</span>
-      </p>
-      <p class="mb-6">📞 Phone: <a href="tel:+15193551324" class="text-blue-400 hover:underline">(519) 355-1324</a></p>
-      <button onclick="openBookingForm()" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
-        Book an Appointment
-      </button>
+
+    <p class="text-lg mb-2">
+      📍 Location:
+      <a href="https://www.google.com/maps/search/?api=1&query=672+Bloomfield+Rd,+Chatham,+Ontario" target="_blank" class="text-blue-400 hover:underline">
+        672 Bloomfield Rd, Chatham, ON
+      </a>
+    </p>
+    <p class="text-lg mb-2">
+      📅 Hours: Monday to Friday, 9 AM - 5 PM<br />
+      <span class="text-sm text-gray-400">Late night and last-minute appointments available upon request.</span>
+    </p>
+    <p class="text-lg mb-6">
+      📞 Phone: 
+      <a href="tel:+15193551324" class="text-blue-400 hover:underline">(519) 355-1324</a>
+    </p>
+    <button onclick="openBookingForm()" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
+      Book an Appointment
+    </button>
+  </section>
+
+  <!-- Booking Form Modal (before mascot) -->
+  <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
+    <div class="bg-gray-900 p-8 rounded-xl w-full max-w-md relative">
+      <button onclick="closeBookingForm()" class="absolute top-3 right-3 text-white font-bold text-xl">&times;</button>
+      <h3 class="text-2xl font-bold text-pink-500 mb-4 text-center">Book Your Service</h3>
+
+      <form name="booking" method="POST" data-netlify="true" id="bookingForm">
+        <input type="hidden" name="form-name" value="booking" />
+        <div class="mb-4">
+          <input type="text" name="vin" placeholder="VIN Number" required class="w-full p-2 rounded bg-gray-800 text-white" />
+        </div>
+        <div class="mb-4">
+          <input type="email" name="email" placeholder="Contact Email" required class="w-full p-2 rounded bg-gray-800 text-white" />
+        </div>
+        <div class="mb-4">
+          <input type="text" name="phone" placeholder="Contact Phone Number" class="w-full p-2 rounded bg-gray-800 text-white" />
+        </div>
+        <div class="mb-4">
+          <input type="text" name="serviceDate" placeholder="Service & Preferred Date/Time" required class="w-full p-2 rounded bg-gray-800 text-white" />
+        </div>
+
+        <div class="mb-4 text-yellow-400 text-sm text-center">
+          ⚠️ Note: Your appointment is <strong>not confirmed</strong> until you receive a confirmation email and/or SMS.
+        </div>
+
+        <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-lg font-bold">Submit Booking</button>
+      </form>
+
+      <div id="thankYouMessage" class="hidden text-center text-green-400 mt-4">
+        <p class="text-lg font-bold">
+          Thank you! Your booking request has been received.<br>
+          ⚠️ Reminder: Your appointment is <strong>not confirmed</strong> until you receive a confirmation email and/or SMS.
+        </p>
+        <button onclick="closeThankYou()" class="mt-4 px-4 py-2 bg-pink-600 text-white rounded">Close</button>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- Booking Form Modal -->
-<div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
-  <div class="bg-gray-900 p-8 rounded-xl w-full max-w-md relative">
-    <button onclick="closeBookingForm()" class="absolute top-3 right-3 text-white font-bold text-xl">&times;</button>
-    <h3 class="text-2xl font-bold text-pink-500 mb-4 text-center">Book Your Service</h3>
+  <!-- Footer -->
+  <footer class="bg-black text-center py-6 text-gray-500">
+    &copy; 2025 RPM Automotive. All rights reserved.
+  </footer>
 
-    <form name="booking" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="bookingForm">
-      <input type="hidden" name="form-name" value="booking" />
-      <input type="hidden" name="bot-field" />
-      <div class="mb-4">
-        <input type="text" name="vin" placeholder="VIN Number" required class="w-full p-2 rounded bg-gray-800 text-white" />
-      </div>
-      <div class="mb-4">
-        <input type="email" name="email" placeholder="Contact Email" required class="w-full p-2 rounded bg-gray-800 text-white" />
-      </div>
-      <div class="mb-4">
-        <input type="text" name="phone" placeholder="Contact Phone Number" class="w-full p-2 rounded bg-gray-800 text-white" />
-      </div>
-      <div class="mb-4">
-        <input type="text" name="serviceDate" placeholder="Service & Preferred Date/Time" required class="w-full p-2 rounded bg-gray-800 text-white" />
-      </div>
+  <!-- Scripts -->
+  <script>
+    function openBookingForm(){
+      document.getElementById('bookingModal').classList.remove('hidden');
+    }
+    function closeBookingForm(){
+      document.getElementById('bookingModal').classList.add('hidden');
+    }
 
-      <div class="mb-4 text-yellow-400 text-sm text-center">
-        ⚠️ Note: Your appointment is <strong>not confirmed</strong> until you receive a confirmation email and/or SMS.
-      </div>
+    const form = document.getElementById('bookingForm');
+    form.addEventListener('submit', function(event){
+      event.preventDefault();
+      const formData = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(()=>{
+        form.style.display = 'none';
+        document.getElementById('thankYouMessage').classList.remove('hidden');
+      })
+      .catch((error)=>alert('Oops! Something went wrong: '+error));
+    });
 
-      <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-lg font-bold">Submit Booking</button>
-    </form>
-
-    <div id="thankYouMessage" class="hidden text-center text-green-400 mt-4">
-      <p class="text-lg font-bold">
-        Thank you! Your booking request has been received.<br>
-        ⚠️ Reminder: Your appointment is <strong>not confirmed</strong> until you receive a confirmation email and/or SMS.
-      </p>
-      <button onclick="closeThankYou()" class="mt-4 px-4 py-2 bg-pink-600 text-white rounded">Close</button>
-    </div>
-  </div>
-</div>
-
-<footer class="bg-black py-6 text-center text-gray-400 text-sm">
-  © 2025 RPM Automotive. All Rights Reserved.
-</footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const serviceItems = document.querySelectorAll(".service-item");
-    const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      serviceItems.forEach((item,index) => {
-        const itemTop = item.getBoundingClientRect().top;
-        if(itemTop < triggerBottom) setTimeout(()=>item.classList.add("visible"), index*150);
-      });
-    };
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-
-    const mascot = document.getElementById('rpmMascot');
-    const bookBtn = document.getElementById('bookNowBtn');
-    bookBtn.addEventListener('mouseenter', () => { mascot.classList.remove('hidden'); setTimeout(()=>mascot.classList.add('hidden'),1000); });
-  });
-
-  function openBookingForm(){document.getElementById('bookingModal').classList.remove('hidden');}
-  function closeBookingForm(){document.getElementById('bookingModal').classList.add('hidden');}
-
-  const form = document.getElementById('bookingForm');
-  form.addEventListener('submit', function(event){
-    event.preventDefault();
-    const formData = new FormData(form);
-    fetch('/', {
-      method: 'POST',
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString()
-    })
-    .then(()=>{
-      form.style.display = 'none';
-      document.getElementById('thankYouMessage').classList.remove('hidden');
-    })
-    .catch((error)=>alert('Oops! Something went wrong: '+error));
-  });
-
-  function closeThankYou(){
-    document.getElementById('thankYouMessage').classList.add('hidden');
-    form.reset();
-    form.style.display = 'block';
-    closeBookingForm();
-  }
-</script>
-
+    function closeThankYou(){
+      document.getElementById('thankYouMessage').classList.add('hidden');
+      form.reset();
+      form.style.display = 'block';
+      closeBookingForm();
+    }
+  </script>
 </body>
 </html>
