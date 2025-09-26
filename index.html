@@ -1,88 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Escort Booking Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RPM Automotive – Fast, honest, and reliable automotive services in Chatham, Ontario. Oil changes, tire rotations, diagnostics, and more.">
+  <meta name="author" content="RPM Automotive">
+  <title>RPM Automotive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #f9f9f9;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
-    }
-    h1 {
-      color: #d81b60;
-      font-size: 36px;
-    }
-    label, select, input, button {
-      display: block;
-      margin: 15px auto;
-      font-size: 16px;
-    }
-    select, input {
-      padding: 8px;
-      width: 250px;
-    }
-    #price {
-      font-weight: bold;
-      color: #333;
-    }
-    .booking-form {
-      margin-top: 40px;
+      font-family: 'Russo One', sans-serif;
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-900 text-white">
 
-  <h1>Book Your Experience</h1>
+  <!-- Header -->
+  <header class="bg-black text-white p-6 text-center shadow-md">
+    <h1 class="text-4xl sm:text-5xl font-bold tracking-wide">RPM Automotive</h1>
+    <p class="mt-2 text-xl sm:text-2xl text-gray-400">Fast. Honest. Reliable.</p>
+  </header>
 
-  <label for="service">Choose a Service:</label>
-  <select id="service" onchange="showPrice()">
-    <option value="">-- Select --</option>
-    <option value="100">GFE - $100/hour</option>
-    <option value="150">Overnight - $150</option>
-    <option value="80">Quick Visit - $80</option>
-    <option value="200">Roleplay - $200/hour</option>
-  </select>
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-blue-900 via-gray-900 to-purple-900 py-20 text-center">
+    <h2 class="text-3xl sm:text-4xl mb-4">Your Local Garage You Can Trust</h2>
+    <p class="text-lg sm:text-xl max-w-xl mx-auto leading-relaxed">
+      We provide expert automotive services including oil changes, tire rotation, diagnostics and more — all with transparent pricing and top-quality service.
+    </p>
+    <button onclick="openBookingForm()" class="mt-6 bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
+      Book an Appointment
+    </button>
+  </section>
 
-  <div id="price"></div>
+  <!-- About -->
+  <section class="py-16 px-6 sm:px-12 md:px-32">
+    <h3 class="text-2xl sm:text-3xl mb-4 text-pink-400">About Us</h3>
+    <p class="text-base sm:text-lg text-gray-300">
+      At RPM Automotive, we’re passionate about cars and the people who drive them. Our team is dedicated to providing you with honest service, fair prices, and fast turnaround. Whether it’s routine maintenance or unexpected repairs — we’ve got your back.
+    </p>
+  </section>
 
-  <div class="booking-form">
-    <h2>Book Now</h2>
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Your Email" required>
-    <input type="date" id="date" required>
-    <input type="time" id="time" required>
-    <button onclick="submitBooking()">Submit Booking</button>
+  <!-- Services -->
+  <section class="bg-gray-800 py-16 px-6 sm:px-12 md:px-32">
+    <h3 class="text-2xl sm:text-3xl mb-6 text-blue-400">Services We Offer</h3>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg">
+      <li>🔧 Oil Changes <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>🔄 Tire Rotations <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>🔍 Engine Diagnostics <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>🧰 Brake Service <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>🚗 General Tune-Ups <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>❄️ A/C Recharge <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>👠 Suspension & Steering <div class="text-sm text-pink-400">Call for pricing</div></li>
+      <li>⚙️ Transmission Flush <div class="text-sm text-pink-400">Call for pricing</div></li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-16 px-6 sm:px-12 md:px-32 bg-gradient-to-b from-purple-900 to-black">
+    <h3 class="text-2xl sm:text-3xl mb-6 text-green-400">Contact Us</h3>
+
+    <!-- Live Google Map -->
+    <div class="mb-6 w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-lg">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.2536370514717!2d-81.63702468450014!3d42.42519827920527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef6c8702d9d81%3A0x9a7c18d6203a3d9c!2s672%20Bloomfield%20Rd%2C%20Chatham-Kent%2C%20ON%20N7M%202J5!5e0!3m2!1sen!2sca!4v1693038721234!5m2!1sen!2sca"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <p class="text-lg mb-2">
+      📍 Location:
+      <a href="https://www.google.com/maps/search/?api=1&query=672+Bloomfield+Rd,+Chatham,+Ontario" target="_blank" class="text-blue-400 hover:underline">
+        672 Bloomfield Rd, Chatham, ON
+      </a>
+    </p>
+    <p class="text-lg mb-2">
+      📅 Hours: Monday to Friday, 9 AM - 5 PM<br />
+      <span class="text-sm text-gray-400">Late night and last-minute appointments available upon request.</span>
+    </p>
+    <p class="text-lg mb-6">
+      📞 Phone: 
+      <a href="tel:+15193551324" class="text-blue-400 hover:underline">(519) 355-1324</a>
+    </p>
+    <button onclick="openBookingForm()" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
+      Book an Appointment
+    </button>
+  </section>
+
+  <!-- Booking Form Modal (before mascot) -->
+  <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
+    <div class="bg-gray-900 p-8 rounded-xl w-full max-w-md relative">
+      <button onclick="closeBookingForm()" class="absolute top-3 right-3 text-white font-bold text-xl">&times;</button>
+      <h3 class="text-2xl font-bold text-pink-500 mb-4 text-center">Book Your Service</h3>
+
+      <form name="booking" method="POST" data-netlify="true" id="bookingForm">
+        <input type="hidden" name="form-name" value="booking" />
+        <div class="mb-4">
+          <input type="text" name="vin" placeholder="VIN Number" required class="w-full p-2 rounded bg-gray-800 text-white" />
+        </div>
+        <div class="mb-4">
+          <input type="email" name="email" placeholder="Contact Email" required class="w-full p-2 rounded bg-gray-800 text-white" />
+        </div>
+        <div class="mb-4">
+          <input type="text" name="phone" placeholder="Contact Phone Number" class="w-full p-2 rounded bg-gray-800 text-white" />
+        </div>
+        <div class="mb-4">
+          <input type="text" name="serviceDate" placeholder="Service & Preferred Date/Time" required class="w-full p-2 rounded bg-gray-800 text-white" />
+        </div>
+
+        <div class="mb-4 text-yellow-400 text-sm text-center">
+          ⚠️ Note: Your appointment is <strong>not confirmed</strong> until you receive a confirmation email and/or SMS.
+        </div>
+
+        <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-lg font-bold">Submit Booking</button>
+      </form>
+
+      <div id="thankYouMessage" class="hidden text-center text-green-400 mt-4">
+        <p class="text-lg font-bold">
+          Thank you! Your booking request has been received.<br>
+          ⚠️ Reminder: Your appointment is <strong>not confirmed</strong> until you receive a confirmation email and/or SMS.
+        </p>
+        <button onclick="closeThankYou()" class="mt-4 px-4 py-2 bg-pink-600 text-white rounded">Close</button>
+      </div>
+    </div>
   </div>
 
+  <!-- Footer -->
+  <footer class="bg-black text-center py-6 text-gray-500">
+    &copy; 2025 RPM Automotive. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
   <script>
-    function showPrice() {
-      const service = document.getElementById("service");
-      const price = service.value;
-      if (price) {
-        document.getElementById("price").innerText = "Price: $" + price;
-      } else {
-        document.getElementById("price").innerText = "";
-      }
+    function openBookingForm(){
+      document.getElementById('bookingModal').classList.remove('hidden');
+    }
+    function closeBookingForm(){
+      document.getElementById('bookingModal').classList.add('hidden');
     }
 
-    function submitBooking() {
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const date = document.getElementById("date").value;
-      const time = document.getElementById("time").value;
-      const service = document.getElementById("service");
-      const serviceName = service.options[service.selectedIndex].text;
+    const form = document.getElementById('bookingForm');
+    form.addEventListener('submit', function(event){
+      event.preventDefault();
+      const formData = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(()=>{
+        form.style.display = 'none';
+        document.getElementById('thankYouMessage').classList.remove('hidden');
+      })
+      .catch((error)=>alert('Oops! Something went wrong: '+error));
+    });
 
-      if (!name || !email || !date || !time || !service.value) {
-        alert("Please fill in all fields.");
-        return;
-      }
-
-      alert("Thank you " + name + "! Your booking for '" + serviceName + "' on " + date + " at " + time + " has been received.");
+    function closeThankYou(){
+      document.getElementById('thankYouMessage').classList.add('hidden');
+      form.reset();
+      form.style.display = 'block';
+      closeBookingForm();
     }
   </script>
-
 </body>
 </html>
