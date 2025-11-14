@@ -1,3 +1,90 @@
+/* ====== CSS Upgrade Kit (Paste at the top) ====== */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 20px;
+}
+
+/* Links */
+a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Buttons */
+button, .btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Sections */
+section {
+    padding: 60px 0;
+}
+
+/* Navigation */
+nav {
+    background-color: #222;
+    padding: 15px 0;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    color: #ff6f61;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    section { padding: 40px 20px; }
+    nav a { display: block; margin: 10px 0; text-align: center; }
+}
+
+/* ====== Your existing custom styles (keep below the upgrade kit) ====== */
 body {
   background-color: pink;
   font-family: Arial, sans-serif;
@@ -6,16 +93,8 @@ body {
 h1 {
   color: blue;
 }
-body {
-  background-color: pink;
-  font-family: Arial, sans-serif;
-}
 
-h1 {
-  color: blue;
-}
-
-/* Add new styles below */
+/* Call button */
 .call-button {
   position: fixed;
   bottom: 20px;
@@ -30,6 +109,7 @@ h1 {
   z-index: 1000;
 }
 
+/* Services animation */
 .service-item {
   opacity: 0;
   transform: translateY(20px);
@@ -40,4 +120,3 @@ h1 {
   opacity: 1;
   transform: translateY(0);
 }
-
