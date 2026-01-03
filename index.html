@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>RPM Automotive | Honest & Affordable Auto Repair in Chatham, ON</title>
   <meta name="description" content="Looking for reliable, affordable auto repair in Chatham, ON? RPM Automotive provides expert oil changes, engine diagnostics, brake service, and more. Fast, honest, and local — we’ve got you covered!">
 
@@ -10,27 +11,28 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #111;
       color: #f5f5f5;
-      position: relative;
     }
+
     h1, h2, h3 {
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
     }
+
     .hero {
-      background: url('images/hero-shop.jpg') center/cover no-repeat;
+      background: url('images/hero-shop.jpg') center / cover no-repeat;
     }
+
     .sr-only {
       position: absolute;
       width: 1px;
       height: 1px;
-      padding: 0;
       margin: -1px;
       overflow: hidden;
       clip: rect(0,0,0,0);
@@ -38,11 +40,11 @@
       border: 0;
     }
 
-    /* RPM Guy Animation */
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-15px); }
     }
+
     .rpm-guy {
       position: fixed;
       bottom: 20px;
@@ -55,167 +57,158 @@
     }
   </style>
 </head>
+
 <body class="leading-relaxed tracking-wide">
 
-  <!-- Header -->
-  <header class="bg-black/80 fixed top-0 left-0 w-full z-50 shadow-lg">
-    <nav class="flex items-center justify-between px-6 sm:px-12 py-4">
-      <h1 class="text-2xl sm:text-3xl font-bold text-pink-500">RPM Automotive | Chatham, ON Auto Repair</h1>
-      <ul class="hidden md:flex space-x-8 text-gray-200 text-lg">
-        <li><a href="#about" class="hover:text-pink-400">About Us</a></li>
-        <li><a href="#services" class="hover:text-pink-400">Our Services</a></li>
-        <li><a href="#contact" class="hover:text-pink-400">Contact / Book</a></li>
-      </ul>
-      <a href="tel:+15193551324" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg shadow">Book Now</a>
-    </nav>
-  </header>
+<!-- HEADER -->
+<header class="bg-black/80 fixed top-0 left-0 w-full z-50 shadow-lg">
+  <nav class="flex items-center justify-between px-6 sm:px-12 py-4">
+    <h1 class="text-2xl sm:text-3xl font-bold text-pink-500">
+      RPM Automotive | Chatham, ON Auto Repair
+    </h1>
 
-  <!-- Hero -->
-  <section class="hero h-screen flex items-center justify-center text-center text-white relative">
-    <img src="images/hero-shop.jpg" alt="RPM Automotive repair shop exterior in Chatham, Ontario" class="sr-only" />
-    <div class="bg-black/70 p-8 rounded-xl">
-      <h2 class="text-4xl sm:text-6xl font-bold mb-4">Reliable Auto Repairs in Chatham, ON</h2>
-      <p class="text-lg sm:text-xl mb-6">Expert service for oil changes, brakes, diagnostics, and more — honest, fast, and affordable.</p>
-      <a href="#contact" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold text-white shadow-lg">Book Your Service Now</a>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-16 px-6 sm:px-12 md:px-32">
-    <h3 class="text-2xl sm:text-3xl mb-4 text-pink-400">About RPM Automotive</h3>
-    <p class="text-base sm:text-lg text-gray-300">
-       At RPM Automotive, we’re passionate about cars and the people who drive them. Our team is dedicated to providing you with honest service, fair prices, and fast turnaround. Whether it’s routine maintenance or unexpected repairs — we’ve got your back.
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="bg-gray-800 py-16 px-6 sm:px-12 md:px-32">
-    <h3 class="text-2xl sm:text-3xl mb-6 text-blue-400">Our Auto Repair Services</h3>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg">
-      <li>🔧 Oil Changes & Fluid Checks <span class="sr-only">— RPM Automotive provides expert oil change services in Chatham, ON</span></li>
-      <li>🔄 Tire Rotations & Wheel Alignment <span class="sr-only">— Reliable tire services for Chatham-Kent drivers</span></li>
-      <li>🔍 Engine Diagnostics & Tune-Ups <span class="sr-only">— Professional engine diagnostics and tune-ups in Chatham</span></li>
-      <li>🧰 Brake Inspections & Repairs <span class="sr-only">— Expert brake inspections and repairs in Chatham, ON</span></li>
-      <li>❄️ A/C Recharge & Heating Service <span class="sr-only">— Vehicle air conditioning and heating service</span></li>
-      <li>👠 Suspension & Steering Repairs <span class="sr-only">— Suspension and steering repair services in Chatham</span></li>
-      <li>⚙️ Transmission Service & Flush <span class="sr-only">— Transmission maintenance and flush in Chatham-Kent</span></li>
-      <li>🚗 Full Vehicle Maintenance & Repairs <span class="sr-only">— Comprehensive vehicle repair services at RPM Automotive</span></li>
+    <ul class="hidden md:flex space-x-8 text-gray-200 text-lg">
+      <li><a href="#about" class="hover:text-pink-400">About</a></li>
+      <li><a href="#services" class="hover:text-pink-400">Services</a></li>
+      <li><a href="#contact" class="hover:text-pink-400">Contact</a></li>
     </ul>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 px-6 sm:px-12 md:px-32 bg-gradient-to-b from-purple-900 to-black">
-    <h3 class="text-2xl sm:text-3xl mb-6 text-green-400">Contact RPM Automotive / Book an Appointment</h3>
+    <a href="tel:+15193551324" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg shadow">
+      Book Now
+    </a>
+  </nav>
+</header>
 
-    <!-- Live Google Map -->
-    <div class="mb-6 w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-lg">
-      <iframe
-        title="RPM Automotive location map in Chatham, Ontario"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.2536370514717!2d-81.63702468450014!3d42.42519827920527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef6c8702d9d81%3A0x9a7c18d6203a3d9c!2s672%20Bloomfield%20Rd%2C%20Chatham-Kent%2C%20ON%20N7M%202J5!5e0!3m2!1sen!2sca!4v1693038721234!5m2!1sen!2sca"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+<!-- HERO -->
+<section class="hero min-h-screen flex items-center justify-center text-center relative">
+  <img src="images/hero-shop.jpg" alt="RPM Automotive repair shop exterior in Chatham, Ontario" class="sr-only">
 
-    <p class="text-lg mb-2">
-      📍 Address:
-      <a href="https://www.google.com/maps/search/?api=1&query=672+Bloomfield+Rd,+Chatham,+Ontario" target="_blank" class="text-blue-400 hover:underline">
-        672 Bloomfield Rd, Chatham, ON
-      </a>
+  <div class="bg-black/70 p-8 rounded-xl">
+    <h2 class="text-4xl sm:text-6xl font-bold mb-4">
+      Reliable Auto Repairs in Chatham, ON
+    </h2>
+    <p class="text-lg sm:text-xl mb-6">
+      Honest, fast, and affordable service for oil changes, brakes, diagnostics & more.
     </p>
-    <p class="text-lg mb-2">
-      📅 Hours: Monday to Friday, 9 AM - 5 PM<br />
-      <span class="text-sm text-gray-400">Evening and last-minute appointments available by request.</span>
-    </p>
-    <p class="text-lg mb-6">
-      📞 Phone: 
-      <a href="tel:+15193551324" class="text-blue-400 hover:underline">(519) 355-1324</a>
-    </p>
-    <button onclick="openBookingForm()" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
-      Book Your Service Online
+    <button onclick="openBookingForm()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold shadow">
+      Book Your Service Now
     </button>
-  </section>
+  </div>
+</section>
 
-  <!-- Booking Modal -->
-  <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
-    <div class="bg-gray-900 p-8 rounded-xl w-full max-w-md relative">
-      <button onclick="closeBookingForm()" class="absolute top-3 right-3 text-white font-bold text-xl">&times;</button>
-      <h3 class="text-2xl font-bold text-pink-500 mb-4 text-center">Book Your Service</h3>
+<!-- ABOUT -->
+<section id="about" class="py-16 px-6 sm:px-12 md:px-32">
+  <h3 class="text-2xl sm:text-3xl mb-4 text-pink-400">About RPM Automotive</h3>
+  <p class="text-lg text-gray-300">
+    At RPM Automotive, we believe in honest work, fair pricing, and treating customers like family.
+    Whether it's routine maintenance or unexpected repairs — we’ve got your back.
+  </p>
+</section>
 
-      <form name="booking" method="POST" data-netlify="true" id="bookingForm">
-        <input type="hidden" name="form-name" value="booking" />
-        <div class="mb-4">
-          <input type="text" name="vin" placeholder="VIN Number" required aria-label="Vehicle Identification Number (VIN)" class="w-full p-2 rounded bg-gray-800 text-white" />
-        </div>
-        <div class="mb-4">
-          <input type="email" name="email" placeholder="Contact Email" required aria-label="Your Email Address" class="w-full p-2 rounded bg-gray-800 text-white" />
-        </div>
-        <div class="mb-4">
-          <input type="text" name="phone" placeholder="Contact Phone Number" aria-label="Phone Number" class="w-full p-2 rounded bg-gray-800 text-white" />
-        </div>
-        <div class="mb-4">
-          <input type="text" name="serviceDate" placeholder="Service & Preferred Date/Time" required aria-label="Preferred Service Date and Time" class="w-full p-2 rounded bg-gray-800 text-white" />
-        </div>
+<!-- SERVICES -->
+<section id="services" class="bg-gray-800 py-16 px-6 sm:px-12 md:px-32">
+  <h3 class="text-2xl sm:text-3xl mb-6 text-blue-400">Our Auto Repair Services</h3>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg">
+    <li>🔧 Oil Changes & Fluid Checks</li>
+    <li>🔄 Tire Rotations & Alignments</li>
+    <li>🔍 Engine Diagnostics & Tune-Ups</li>
+    <li>🧰 Brake Inspections & Repairs</li>
+    <li>❄️ A/C & Heating Service</li>
+    <li>⚙️ Transmission Service & Flush</li>
+    <li>🚗 Full Vehicle Maintenance</li>
+  </ul>
+</section>
 
-        <div class="mb-4 text-yellow-400 text-sm text-center">
-          ⚠️ Note: Your appointment is <strong>not confirmed</strong> until you receive a confirmation email and/or SMS.
-        </div>
+<!-- CONTACT -->
+<section id="contact" class="py-16 px-6 sm:px-12 md:px-32 bg-gradient-to-b from-purple-900 to-black">
+  <h3 class="text-2xl sm:text-3xl mb-6 text-green-400">
+    Contact / Book an Appointment
+  </h3>
 
-        <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-lg font-bold">Submit Booking</button>
-      </form>
+  <p class="text-lg mb-2">
+    📍 672 Bloomfield Rd, Chatham, ON
+  </p>
 
-      <div id="thankYouMessage" class="hidden text-center text-green-400 mt-4">
-        <p class="text-lg font-bold">
-          Thank you! Your booking request has been received.<br>
-          ⚠️ Reminder: Your appointment is <strong>not confirmed</strong> until you receive a confirmation email and/or SMS.
-        </p>
-        <button onclick="closeThankYou()" class="mt-4 px-4 py-2 bg-pink-600 text-white rounded">Close</button>
-      </div>
+  <p class="text-lg mb-2">
+    📅 Monday–Friday, 9AM–5PM
+  </p>
+
+  <p class="text-lg mb-6">
+    📞 <a href="tel:+15193551324" class="text-blue-400 hover:underline">(519) 355-1324</a>
+  </p>
+
+  <button onclick="openBookingForm()" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow">
+    Book Online
+  </button>
+</section>
+
+<!-- BOOKING MODAL -->
+<div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
+  <div class="bg-gray-900 p-8 rounded-xl w-full max-w-md relative">
+
+    <button onclick="closeBookingForm()" class="absolute top-3 right-3 text-white text-xl">&times;</button>
+
+    <h3 class="text-2xl font-bold text-pink-500 mb-4 text-center">
+      Book Your Service
+    </h3>
+
+    <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="bookingForm">
+      <input type="hidden" name="form-name" value="booking">
+
+      <!-- Honeypot -->
+      <p class="hidden">
+        <label>Don’t fill this out: <input name="bot-field"></label>
+      </p>
+
+      <input class="w-full p-2 mb-3 rounded bg-gray-800 text-white" name="vin" placeholder="VIN Number" required>
+      <input class="w-full p-2 mb-3 rounded bg-gray-800 text-white" type="email" name="email" placeholder="Email" required>
+      <input class="w-full p-2 mb-3 rounded bg-gray-800 text-white" name="phone" placeholder="Phone Number">
+      <input class="w-full p-2 mb-4 rounded bg-gray-800 text-white" name="serviceDate" placeholder="Service & Preferred Date/Time" required>
+
+      <button class="w-full bg-pink-600 hover:bg-pink-700 p-3 rounded-lg font-bold">
+        Submit Booking
+      </button>
+    </form>
+
+    <div id="thankYouMessage" class="hidden text-center text-green-400 mt-4">
+      Thank you! Your request has been received.
     </div>
   </div>
+</div>
 
-  <!-- RPM Guy Icon -->
-  <img src="images/rpm-guy.png" class="rpm-guy" alt="RPM Automotive mascot, click to book service" title="RPM Automotive Mascot" onclick="openBookingForm()" />
+<img src="images/rpm-guy.png" class="rpm-guy" alt="RPM Automotive mascot" onclick="openBookingForm()">
 
-  <!-- Footer -->
-  <footer class="bg-black py-6 text-center text-gray-400 text-sm">
-    © 2025 RPM Automotive. All Rights Reserved.
-  </footer>
+<footer class="bg-black py-6 text-center text-gray-400 text-sm">
+  © 2025 RPM Automotive. All Rights Reserved.
+</footer>
 
-  <!-- Scripts -->
-  <script>
-    function openBookingForm(){
-      document.getElementById('bookingModal').classList.remove('hidden');
-    }
-    function closeBookingForm(){
-      document.getElementById('bookingModal').classList.add('hidden');
-    }
+<script>
+  const modal = document.getElementById('bookingModal');
+  const form = document.getElementById('bookingForm');
+  const thankYou = document.getElementById('thankYouMessage');
 
-    const form = document.getElementById('bookingForm');
-    form.addEventListener('submit', function(event){
-      event.preventDefault();
-      const formData = new FormData(form);
-      fetch('/', {
-        method: 'POST',
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      })
-      .then(()=>{
-        form.style.display = 'none';
-        document.getElementById('thankYouMessage').classList.remove('hidden');
-      })
-      .catch((error)=>alert('Oops! Something went wrong: '+error));
+  function openBookingForm() {
+    modal.classList.remove('hidden');
+  }
+
+  function closeBookingForm() {
+    modal.classList.add('hidden');
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = new URLSearchParams(new FormData(form)).toString();
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data
+    }).then(() => {
+      form.style.display = 'none';
+      thankYou.classList.remove('hidden');
     });
+  });
+</script>
 
-    function closeThankYou(){
-      document.getElementById('thankYouMessage').classList.add('hidden');
-      form.reset();
-      form.style.display = 'block';
-      closeBookingForm();
-    }
-  </script>
 </body>
 </html>
